@@ -52,6 +52,17 @@ body {
 	overflow-y: scroll;
 }
 
+#results::-webkit-scrollbar{
+	width: 0.8em;
+	background: #eee;
+	border-radius: 3px;
+}
+
+#results::-webkit-scrollbar-thumb{
+	background: #bbb;
+	border-radius: 3px;
+}
+
 #results .list{
 	background: #1d1d1d;
 	width: 100%;
