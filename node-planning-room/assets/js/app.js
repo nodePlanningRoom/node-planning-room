@@ -25,6 +25,10 @@
 
     });
 
+    socket.on('refreshUsersOnRoom' function(message){
+      console.log(message)
+    })
+
   });
 
 
