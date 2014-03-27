@@ -53,13 +53,13 @@ body {
 }
 
 #results::-webkit-scrollbar{
-	width: 0.8em;
-	background: #eee;
+	width: 0.6em;
+	background: #fff;
 	border-radius: 3px;
 }
 
 #results::-webkit-scrollbar-thumb{
-	background: #bbb;
+	background: #aaa;
 	border-radius: 3px;
 }
 
