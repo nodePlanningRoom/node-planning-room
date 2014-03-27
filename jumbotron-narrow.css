@@ -1,7 +1,7 @@
 /* Space out content a bit */
 body {
 	background: #1d1d1d;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 20px;
 	color: #fff;
 }
@@ -34,7 +34,7 @@ body {
 }
 
 .header{
-	height: 100px;
+	height: 202px;
 	background: url(/img/logo/mini_logo.png) no-repeat center;
 }
 
@@ -44,21 +44,21 @@ body {
 
 /* Serach Room Style */
 #results{
-	height: 300px;
+	height: 200px;
 	/*padding: 15px;*/
-	background: #1d1d1d;
-	border-radius: 5px;
+	background: #303030;
+	border-radius: 3px;
 	box-shadow: inset 0 0 5px #000;
 	overflow-y: scroll;
 }
 
 #results .list{
-	background: #fff;
+	background: #1d1d1d;
 	width: 100%;
-	height: 41px;
-	padding: 0 0 10px 0px;
-	border: 1px solid #d5d5d5;
-	line-height: 41px;
+	height: 31px;
+	padding: 0 0 10px 10px;
+	border: 1px solid #303030;
+	line-height: 31px;
 	border-top: 0;
 	border-left: 0;
 	margin: 0;
@@ -66,39 +66,45 @@ body {
 }
 
 #results .list a{
-	color: #303030;
-	font-size: 20px;
+	color: #FFF;
+	font-size: 14px;
 }
-#results .list a .num{
-	background: url(/img/icon_group.png) no-repeat, #1d1d1d;
-	float: left;
-	width: 41px;
-	height: 41px;
+
+#results .list a span::before{
+	content: url(/img/icon_group.png) 0 0 no-repeat;
+	position: absolute;
+	left:  5px;
+	top: 0pc;
+}
+
+#results .list a span{
+	color: #FFF;
+	font-size: 11px;
+	text-align: center;
+	background: #47a447;
+	float: right;
+	width: 51px;
+	height: 21px;
+	padding-left: 15px;
+	padding-bottom: 10px;
+	border-radius: 3px;
+	margin-top: 3px;
+	line-height: 22px;
+	font-weight: bold;
 	border-bottom: 1px solid #000;
 	margin-right: 10px;
 	position: relative;
-}
-
-#results .list a .num span{
-	background: #73a53e;
-	text-align: center;
-	font-weight: bold;
-	font-size: 14px;
-	color: #fff;
-	display: table;
-	height: 1px;
-	position: absolute;
-	top: 3px;
-	left: 9px;
-	padding: 1px;
-	line-height: 1;
-	border-radius: 2px;
 }
 
 /* Custom page footer */
 .footer {
   padding-top: 19px;
   color: #777;
+}
+
+.footer p{
+	width: 100%;
+	text-align: center;
 }
 
 /* Customize container */
@@ -114,11 +120,14 @@ body {
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
 }
 .jumbotron .btn {
   padding: 14px 24px;
   font-size: 21px;
+}
+
+.btn-submit{
+	background-color: #80bd01 !important;
 }
 
 /* Supporting marketing content */
@@ -140,7 +149,7 @@ body {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
