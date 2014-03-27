@@ -7,6 +7,12 @@
  * Feel free to change none, some, or ALL of this file to fit your needs!
  */
 
+// var refresh = function(_rooms){
+//   for(var i=0;i<_rooms.length;i++){
+//     console.log(_rooms[i]);
+//   }
+  
+// }
 
 (function (io) {
 
@@ -16,13 +22,14 @@
     log('Connecting to Sails.js...');
   }
 
+
   socket.on('connect', function socketConnected() {
 
     // Listen for Comet messages from Sails
     socket.on('refreshRooms', function messageReceived(message) {
 
       log('New comet message received :: ', message);
-
+      //refresh();
     });
 
   });
@@ -41,13 +48,7 @@
   }
   
 
-})(
-
-  // In case you're wrapping socket.io to prevent pollution of the global namespace,
-  // you can replace `window.io` with your own `io` here:
-  window.io
-
-);
+}(window.io));
 
 (function($){
     var $roomForm = $('#roomForm'),
@@ -55,31 +56,35 @@
         $rmRoom = $('#buttonRm');
 
     $button.on('click', function(){
-        var formData = $roomForm.serialize();
+        var formData = {
+          id:$("#id").val(),
+          password:$("#password").val()
+        };
+        console.log(formData);
+        
+        socket.post('/room',formData,function(res){
 
-        $.ajax({
-            type: 'post',
-            url: '/room',
-            data: formData
-        }).done(function(data){
-            console.log(data);
-        }).fail(function(jqXHR){
-            console.log(jqXHR.responseJSON);
-        });
+        })
     });
      $rmRoom.on('click', function(){
         var formData = $roomForm.serialize();
 
-        $.ajax({
-            type: 'DELETE',
-            url: '/room',
-            data: formData
-        }).done(function(data){
-            console.log(data);
-        }).fail(function(jqXHR){
-            console.log(jqXHR.responseJSON);
-        });
+        
+     socket.delete("/room/"+formData.id,function(){
+
+     })
     });
 
+    // $.ajax({
+    //   type:'GET',
+    //   url:'/room',
+    // }).done(function(data){
+    //   console.log("Aki");
+    //   console.log(data);
+    //  // refresh(data);
+    // }).fail(function(data){
+
+    // });
+    
 
 }(jQuery));
