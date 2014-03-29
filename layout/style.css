@@ -35,12 +35,17 @@ body {
 
 .header{
 	height: 202px;
-	background: url(/img/logo/mini_logo.png) no-repeat center;
+	background: url(./img/logo/mini_logo.png) no-repeat center;
+}
+
+.header-admin{
+	height: 50px;
+	background: url(./img/logo/mini_logo.png) no-repeat center;
+	background-size:50px;
 }
 
 ._marketing{
 	background: #303030;
-	box-shadow: 0 0 1px #000;
 }
 
 /* Serach Room Style */
@@ -50,6 +55,17 @@ body {
 	border-radius: 3px;
 	border: 1px solid #1d1d1d;
 	overflow-y: scroll;
+}
+
+#results::-webkit-scrollbar{
+	width: 0.6em;
+	background: #fff;
+	border-radius: 3px;
+}
+
+#results::-webkit-scrollbar-thumb{
+	background: #aaa;
+	border-radius: 3px;
 }
 
 #results .list{
@@ -69,7 +85,7 @@ body {
 }
 
 #results .list a span::before{
-	content: url(/img/icon_group.png) 0 0 no-repeat;
+	content: url(./img/icon_group.png) 0 0 no-repeat;
 	position: absolute;
 	left:  5px;
 	top: 0pc;
@@ -104,6 +120,18 @@ body {
 	text-align: center;
 }
 
+
+
+/********************\
+		Admin
+\********************/
+
+#imputDataContent{
+	height: 200px;
+}
+
+
+
 /* Customize container */
 @media (min-width: 768px) {
   .container {
@@ -113,6 +141,10 @@ body {
 .container-narrow > hr {
   margin: 30px 0;
 }
+
+.lg-container {
+    max-width: 1170px;
+  }
 
 /* Main marketing message and sign up button */
 .jumbotron {
